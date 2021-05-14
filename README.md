@@ -13,3 +13,5 @@ I was thinking we can compare *New york vs Sao Paulo* given than the population 
 We can do the same analysis for different cities, as the data is included in the [file](https://github.com/archinarula/Group-5-Project/blob/Maria/Comparativo-ciudades.csv)
 
 The source of this data cna be found [here](https://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/covid19/)
+
+I also found the average daily temperature for major cities. You can find the link [here](https://www.kaggle.com/sudalairajkumar/daily-temperature-of-major-cities) 
