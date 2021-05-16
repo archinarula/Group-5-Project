@@ -28,7 +28,6 @@ The purpose of this study is to analyse if colder and dryer weather increases th
 2.  [Sao Paulo Covid Data]( https://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/covid19/)
 3. [New York Covid data](https://github.com/nychealth/coronavirus-data)
 4. [Sao Paulo daily covid data](https://github.com/wcota/covid19br/blob/master/DESCRIPTION.en.md)
-4. 
 
 **Data Collection:** Secondary Data Collected from Kaggle and other international observatories
 
