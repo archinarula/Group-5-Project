@@ -18,7 +18,7 @@ The first link is a study done at the beigning of 2020 by University of Oxford a
 
 ## Purpose
 
-The purpose of this study is to analyse if colder and dryer weather increases the spredh of Covid-19 virus. **More specificaly find the realtion and quatify the increase in spread with temperature drop of every 2 degree celsius or percipatation dropped by 5%????**
+The purpose of this study is to analyse if colder and dryer weather increases the spredh of Covid-19 virus. More specificaly find the realtion and quatify the increase in spread with temperature drop of every x degree celsius or percipatation dropped by y% dropped.
 
 ## Data
 
