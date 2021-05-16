@@ -22,7 +22,7 @@ The purpose of this study is to analyse if there is any impact of weather on Cov
 
 ## Definition
 
--**Covid19 rate: ** New daily covid19 cases reported in selected cities per capita population (New daily case / City Population)
+- **Covid19 rate**: New daily covid19 cases reported in selected cities per capita population (New daily case / City Population)
 
 - **Weather**: A combination of variables like daily Average Temperature, Average Humidity, Average Precipitation & Average Windspeed 
 
