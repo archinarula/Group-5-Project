@@ -52,3 +52,8 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 **Data Storage (Database):** PostgreSQL or SQLite
 **Visualization:** Python Libraries or Tableau
 
+## Communication Protocols:
+**Slack group created for coordination and exchange of ideas/information
+**Weekdays daily calls to syncup progress and define next steps
+**Weekend calls to refine outputs and prepare submission for the week
+
