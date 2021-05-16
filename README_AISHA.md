@@ -14,7 +14,7 @@ Some of the key one published over the year are:
 6. www.huffingtonpost.ca on Jan.7,2021 [Does Cold Weather Make COVID-19 Spread More Easily?](https://www.huffingtonpost.ca/entry/cold-weather-spread-covid-explainer_ca_5ff78146c5b612d958ea6d29)
 7.  www.ctvnews.ca on Sep. 20,2020 [COVID-19 appears to spread less in warm and wet climates](https://www.statnews.com/2020/10/21/covid19-winter-dry-indoor-air-helps-coronavirus-spread/)
 
-The first link is a study and its reuslt from beigning of 2020 from University of Oxford.
+The first link is a study done at the beigning of 2020 by University of Oxford and its reuslt around this topic.
 
 ## Purpose
 
@@ -51,7 +51,7 @@ The purpose of this study is to analyse if colder and dryer weather increases th
         -   What is the current level of SARS-CoV-2 (coronavirus) transmission in the community?
         -   Are we doing enough testing for the amount of people who are getting infected?
 
-Weather: A combination of variables like daily Average Temperature,Average Precipitation .
+2.  Weather metrics: A combination of variables like daily Average Temperature,Average Precipitation .
     -   Average daily temparture in celsius: Avg_Temperature
     -   Average daily percepitation: Avg_Precipitation 
 
@@ -77,7 +77,7 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 
 
 ## Tools:
-**Data Analysis:** Python
-**Data Storage (Database):** PostgreSQL or SQLite
-**Visualization:** Python Libraries or Tableau
+1.  **Data Analysis:** Python
+2.  **Data Storage (Database):** PostgreSQL or SQLite
+3.  **Visualization:** Python Libraries or Tableau
 
