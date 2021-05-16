@@ -18,23 +18,23 @@ The first link is a study done at the beigning of 2020 by University of Oxford a
 
 ## Purpose
 
-The purpose of this study is to analyse if colder and dryer weather increases the spredh of Covid-19 virus. More specificaly find the realtion and quatify the increase in spread with temperature drop of every x degree celsius or percipatation dropped by y% dropped.
+The purpose of this study is to analyse if colder and dryer weather increases the spredh of Covid-19 virus. More specificaly find the realtion and quatify the increase in spread with temperature drop of every x degree celsius or percipatation dropped by y%.
 
 ## Data
 
 **Data Source:**  
 
 1.  [Kaggle Weather Data]( https://www.kaggle.com/sudalairajkumar/daily-temperature-of-major-cities)
-2.  [Sao Paulo Covid Data]( https://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/covid19/)
-3. [New York Covid data](https://github.com/nychealth/coronavirus-data)
-4. [Sao Paulo daily covid data](https://github.com/wcota/covid19br/blob/master/DESCRIPTION.en.md)
+2.  [Major Cities Covid Data]( https://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/covid19/)
+3.  [New York Covid data](https://github.com/nychealth/coronavirus-data)
+4.  [Sao Paulo daily covid data](https://github.com/wcota/covid19br/blob/master/DESCRIPTION.en.md)
 
 **Data Collection:** Secondary Data Collected from Kaggle and other international observatories
 
 **Variables:** 
 1.  Dependent: One of the following:
     -   Covid 19 new cases per 100,000 population: Covid19NewCases:
-    -   Percent Postive aka Positivy Rate: per_positive [What is the "percent postive" and why does it matter](https://www.jhsph.edu/covid-19/articles/covid-19-testing-understanding-the-percent-positive.html#:~:text=The%20percent%20positive%20is%20exactly,total%20tests)%20x%20100%25.)
+    -   Percent Positive aka Positivy Rate: per_positive [What is the "percent postive" and why does it matter](https://www.jhsph.edu/covid-19/articles/covid-19-testing-understanding-the-percent-positive.html#:~:text=The%20percent%20positive%20is%20exactly,total%20tests%20x%20100%25.)
 2.  Independent Variables: 
     - Average daily temparture in celsius: Avg_Temperature
     - Average daily percepitation: Avg_Precipitation 
@@ -47,7 +47,7 @@ The purpose of this study is to analyse if colder and dryer weather increases th
 
 1. Covid metrcis:
     -   Covid19 rate: New daily covid19 cases reported in selected cities per capita population (New daily case / City Population) **Or option 2 is Total number of cases by 100k inhabitants**
-    - Percent Postive: Tthe percentage of all coronavirus tests performed that are actually positive, or: (positive tests)/(total tests) x 100%. The percent positive (sometimes called the “percent positive rate” or “positivity rate”) helps public health officials answer questions such as:
+    - Percent Postive: The percentage of all coronavirus tests performed that are actually positive, or: (positive tests)/(total tests) x 100%. The percent positive (sometimes called the “percent positive rate” or “positivity rate”) helps public health officials answer questions such as:
         -   What is the current level of SARS-CoV-2 (coronavirus) transmission in the community?
         -   Are we doing enough testing for the amount of people who are getting infected?
 
@@ -81,3 +81,7 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 2.  **Data Storage (Database):** PostgreSQL or SQLite
 3.  **Visualization:** Python Libraries or Tableau
 
+## Communication Protocols:
+- **Slack group** created for coordination and exchange of ideas/information
+- **Weekdays daily calls** to syncup progress and define next steps
+- **Weekend calls** to refine outputs and prepare submission for the week
