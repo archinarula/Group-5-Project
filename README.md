@@ -22,9 +22,9 @@ The purpose of this study is to analyse if there is any impact of weather on Cov
 
 ## Definition
 
-Covid19 rate: New daily covid19 cases reported in selected cities per capita population (New daily case / City Population)
+-**Covid19 rate: ** New daily covid19 cases reported in selected cities per capita population (New daily case / City Population)
 
-Weather: A combination of variables like daily Average Temperature, Average Humidity, Average Precipitation & Average Windspeed 
+- **Weather**: A combination of variables like daily Average Temperature, Average Humidity, Average Precipitation & Average Windspeed 
 
 
 ## Methodology
@@ -36,14 +36,14 @@ H0: Weather conditions such as average daily temperature, humidity, precipitatio
 H1: Weather conditions such as average daily temperature, humidity, precipitation and wind rate have effect on the rate of new Covid19 cases in 2 cities
 
 To test our hypothesis, we shall be utilizing one or more of the following models: 
-•	Linear Regression Model
-•	Support Vector Machines
-•	XG Boosting (Gradient Boosting)
+- Linear Regression Model
+- Support Vector Machines
+- XG Boosting (Gradient Boosting)
 
 **Assumptions:** For our modelling purpose we are taking into consideration following assumptions:
-•	There are no extreme deviations in daily average weather parameters
-•	Covid testing was available with similar opportunities to the residents of both cities
-•	All or none Covid19 precautions were followed by residents of both of the cities 
+- There are no extreme deviations in daily average weather parameters
+- Covid testing was available with similar opportunities to the residents of both cities
+- All or none Covid19 precautions were followed by residents of both of the cities 
 
 
 
