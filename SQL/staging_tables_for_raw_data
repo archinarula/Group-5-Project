@@ -1,0 +1,105 @@
+CREATE TABLE stg_cases_brazil_cities 
+(
+epi_week text,
+date text,
+country text,
+state text,
+city text,
+ibgeID text,
+cod_RegiaoDeSaude text,
+name_RegiaoDeSaude text,
+newDeaths text,
+deaths text,
+newCases text,
+totalCases text,
+deaths_per_100k_inhabitants text,
+totalCases_per_100k_inhabitants text,
+deaths_by_totalCases text,
+data_source text,
+last_info_date date
+);
+select count(*) from stg_cases_brazil_cities ;
+--2081098
+---identify records where data is not for Sao Paulo
+select country, state,city,ibgeID,cod_RegiaoDeSaude,name_RegiaoDeSaude,count(*)
+from stg_cases_brazil_cities
+group by 1,2,3,4,5,6
+order by 3 desc;
+
+select country, state,city,ibgeID,cod_RegiaoDeSaude,name_RegiaoDeSaude,count(*)
+from stg_cases_brazil_cities
+where ibgeID ='3550308'
+group by 1,2,3,4,5,6
+order by 3 desc;
+
+
+delete from stg_cases_brazil_cities
+where ibgeID <> '3550308';
+
+select *  from stg_cases_brazil_cities order by 1;
+
+---checking if any numeric column has decimal
+
+select * from stg_cases_brazil_cities where totalcases like '%.%' or newcases like '%.%';
+
+CREATE TABLE cases_saopaulo_wcota_hist
+(
+epi_week int,
+reported_date date,
+country text,
+state text,
+city text,
+ibgeID text,
+cod_RegiaoDeSaude text,
+name_RegiaoDeSaude text,
+newDeaths int,
+deaths int,
+newCases int,
+totalCases int,
+deaths_per_100k_inhabitants decimal,
+totalCases_per_100k_inhabitants decimal,
+deaths_by_totalCases decimal,
+data_source text,
+last_info_date date,
+data_source_for_analysis text,
+rec_insert_dt date default current_date
+);
+
+insert into cases_saopaulo_wcota_hist
+select
+cast(epi_week as int) ,
+cast( date as date) ,
+country ,
+state ,
+city ,
+ibgeID ,
+cod_RegiaoDeSaude ,
+name_RegiaoDeSaude ,
+cast(newDeaths as int) ,
+cast( deaths  as int),
+cast(newCases as int) ,
+cast(totalCases as int) ,
+cast(deaths_per_100k_inhabitants as decimal) ,
+cast(totalCases_per_100k_inhabitants as decimal) ,
+cast( deaths_by_totalCases as decimal) ,
+data_source ,
+last_info_date ,
+'https://github.com/wcota/covid19br/blob/master/cases-brazil-cities.csv' as data_source_for_analysis
+from stg_cases_brazil_cities;
+
+
+select * from cases_saopaulo_wcota_hist order by reported_date;
+--check if total cases is total cases from previous date + new cases from new date
+
+with prev_day_data as
+(select reported_date,lag(totalcases,1)over(order by reported_date) as prev_day_totalcases
+from cases_saopaulo_wcota_hist order by 1  )
+select a.reported_date,totalcases,newcases,b.prev_day_totalcases,
+prev_day_totalcases+newcases as cal_totalcases
+from cases_saopaulo_wcota_hist a
+join prev_day_data b
+on a.reported_date = b.reported_date
+where prev_day_totalcases+newcases  <> totalcases
+order by 1;
+--above query confirms that the totalcases are the cumulative total cases. doesn't remove the deaths or recoved from the total cases
+
