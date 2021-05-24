@@ -1,1 +1,3 @@
+Independent Variables:
 
+We can also include wind speed to our weather data
