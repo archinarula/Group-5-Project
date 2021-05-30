@@ -69,10 +69,29 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 -   Covid testing was available with similar opportunities to the residents of both cities
 -   All or none Covid19 precautions were followed by residents of both of the cities 
 
+**Data exploratory Analysis**
+- Started with 4 data sets and performed ETL to get the final variables for city data  like combining two city data set with variable like total confirmed cases,cases per million
+- for weather data transformed the sources data to average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
+- After analysing the data we found outliers in both of the citiy data sets and correlation between the average temperature and humidity were very small 
 
+images:
+- We found other data sources that are more reliable repeated exploratory analysis in Excel
+- Outeliers are present for new cases and aslo for 7 day average new cases
+image:
+- Instead of using raw daily new cases, we are using moving average (for 7 days including current day) per 100k to remove any anomoloies for the city data.
+image:
+-The new weather data includes variables like average and 15 average temperature and humidity
+image:
+
+
+
+
+
+
+Created new dat
 ## Tools:
 1.  **Data Analysis:** Python
-2.  **Data Storage (Database):** PostgreSQL(ask)
+2.  **Data Storage (Database):** PostgreSQL but later we did not use database as the data set size was small
 3.  **Visualization:** Google Sheets or Tableau
 
 ## Communication Protocols:
