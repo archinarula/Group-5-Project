@@ -1,1 +1,0 @@
-changed folder name to Clean_ CSV- it contains the cleaned Cities data and Weather Data

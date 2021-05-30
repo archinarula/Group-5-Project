@@ -459,3 +459,4 @@ Extract_Date,Reported_Date,City,is_newyork,Population,Data_Source,New_Cases,mavg
 2021-05-30,2021-05-27,Sao Paulo,0,11869660,https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv,2318,2319.0,19.53,19.54
 2021-05-30,2021-05-28,Sao Paulo,0,11869660,https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv,431,1965.71,3.63,16.56
 2021-05-30,2021-05-29,Sao Paulo,0,11869660,https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv,2125,1817.29,17.9,15.31
+2021-05-30,2021-05-30,Sao Paulo,0,11869660,https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv,1520,1903.86,12.81,16.04
