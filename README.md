@@ -73,26 +73,42 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 - Started with 4 data sets and performed ETL to get the final variables for city data  like combining two city data set with variable like total confirmed cases,cases per million
 - for weather data transformed the sources data to average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
 - After analysing the data we found outliers in both of the citiy data sets and correlation between the average temperature and humidity were very small 
+  
+![NYC](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/newyork_totalconfirmdataset.png)![SP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_totalconfirmdataset.png)
 
-images:
+![CNYC](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/corelation_olddataset_NYC.png)                                                  ![CSP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/corelation_olddataset_SP.png)
+
+
 - We found other data sources that are more reliable repeated exploratory analysis in Excel
-- Outeliers are present for new cases and aslo for 7 day average new cases
-image:
+- Outeliers are present for new cases and also for 7 day average new cases
+
+![SPNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_newcases_outliers.png)![SPAveNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_Ave_7day_count.png)
+
 - Instead of using raw daily new cases, we are using moving average (for 7 days including current day) per 100k to remove any anomoloies for the city data.
-image:
--The new weather data includes variables like average and 15 average temperature and humidity
-image:
 
+![7_AVG_100k](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/7-day_avg_100k_newcases.png)
 
+- The new weather data includes variables like average and 15 average temperature and humidity
 
+![15_Ave_temp](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/15day_avg_temp.png)
 
+![15_Ave_humidity](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/15day_avg_humidity.png)
 
+- Correlation between the new transformed data 
 
-Created new dat
+![New_Variables](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/Correlation_finaldataset.png)
+
+- Pairplot to see relationship on the various columns in 2 cities i.e between Moving Average New Cases per 100k with Moving Avg 15 days Tempreture and Humidity
+
+![PP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/pairplot.png)
+
+## Visualization using Google sheets:
+[**Google sheets**](https://docs.google.com/presentation/d/1ZVr5sjjc9tDzyN3UlWber7vavX04F2WQ1VslqYYOfDA/edit?usp=sharing)
+
 ## Tools:
 1.  **Data Analysis:** Python
 2.  **Data Storage (Database):** PostgreSQL but later we did not use database as the data set size was small
-3.  **Visualization:** Google Sheets or Tableau
+3.  **Visualization:** Google Sheets
 
 ## Communication Protocols:
 - **Slack group** created for coordination and exchange of ideas/information
