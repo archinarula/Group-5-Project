@@ -70,25 +70,47 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 -   All or none Covid19 precautions were followed by residents of both of the cities 
 
 ## Data exploratory Analysis
+
+**First Analysis:**
 - Started with 4 data sets and performed ETL to get the final variables for city data  like combining two city data set with variable like total confirmed cases,cases per million
-- for weather data transformed the sources data to average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
-- After analysing the data we found outliers in both of the citiy data sets and correlation between the average temperature and humidity were very small 
-  
+- Weather data was transformed average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
+- After analysing the data we found outliers in both of the citiy data sets 
+
 ![NYC](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/newyork_totalconfirmdataset.png)![SP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_totalconfirmdataset.png)
 
-![CNYC](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/corelation_olddataset_NYC.png)                                                  ![CSP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/corelation_olddataset_SP.png)
+- Correlation between new cases and average temperature for NYC(-0.048)
+- Correlation between new cases and average humidity for NYC(0.1) 
+  
+ NYC new cases vs Average temperature vs average humidity
+  
+![CNYC](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/corelation_olddataset_NYC.png)
 
+- Correlation between new cases and average temperature for Sau Paulo(0.0041)
+- Correlation between new cases and average humidity for Sau Paulo(-0.015)
 
+Sao Paulo new cases vs Average temperature vs average humidity
+
+![CSP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/corelation_olddataset_SP.png)
+
+**Result**
+- Outliers were many and correlation was very small 
 - We found other data sources that are more reliable repeated exploratory analysis in Excel
-- Outeliers are present for new cases and also for 7 day average new cases
 
+**Second Analysis**
+- We transformed new city data set to new cases and 7day average new cases 
+- Sau Paulo city data set has many outliers even for new cases and 7 day average new cases
+
+Sau Paulo new cases outliers                                                                                                        Sau Paulo 7 day average outliers
 ![SPNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_newcases_outliers.png)![SPAveNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_Ave_7day_count.png)
+**Result:
+- Instead of using raw daily new cases, we are using moving average (for 7 days including current day) per 100k population to remove any anomoloies for the city data.
 
-- Instead of using raw daily new cases, we are using moving average (for 7 days including current day) per 100k to remove any anomoloies for the city data.
+**Third Analysis**
+Transformed city data to get 7 day average per 100k population
 
 ![7_AVG_100k](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/7-day_avg_100k_newcases.png)
 
-- The new weather data includes variables like average and 15 average temperature and humidity
+- The new weather data includes variables like average and 15 average for temperature and humidity as the covid symptoms can be found 15 days after its contact  
 
 ![15_Ave_temp](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/15day_avg_temp.png)
 
