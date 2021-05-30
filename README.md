@@ -100,9 +100,10 @@ Sao Paulo new cases vs Average temperature vs average humidity
 - We transformed new city data set to new cases and 7day average new cases 
 - Sau Paulo city data set has many outliers even for new cases and 7 day average new cases
 
-Sau Paulo new cases outliers                                                                                                        Sau Paulo 7 day average outliers
+
 ![SPNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_newcases_outliers.png)![SPAveNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_Ave_7day_count.png)
-**Result:
+
+**Result**
 - Instead of using raw daily new cases, we are using moving average (for 7 days including current day) per 100k population to remove any anomoloies for the city data.
 
 **Third Analysis**
