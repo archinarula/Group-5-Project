@@ -69,7 +69,7 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 -   Covid testing was available with similar opportunities to the residents of both cities
 -   All or none Covid19 precautions were followed by residents of both of the cities 
 
-**Data exploratory Analysis**
+## Data exploratory Analysis
 - Started with 4 data sets and performed ETL to get the final variables for city data  like combining two city data set with variable like total confirmed cases,cases per million
 - for weather data transformed the sources data to average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
 - After analysing the data we found outliers in both of the citiy data sets and correlation between the average temperature and humidity were very small 
