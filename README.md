@@ -98,10 +98,12 @@ We are following the considerations below to complete the analysis:
 - We found other data sources that are more reliable repeated exploratory analysis in Excel
 
 **Second Analysis**
-- We used different city data sources and the weather data remains same
+- We used different data sources
 1.  [Weather Data]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
 2.  [New York Covid data](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
 3.  [Sao Paulo daily covid data](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
+
+- Source for Data exploration in: [Excel Analysis](https://github.com/archinarula/Group-5-Project/blob/main/aisha_working_folder/Comparativo-ciudades%20vs%20github%20data%20source%20comparison.xlsx) 
 
 - Instead of using raw daily new cases, we are using moving average (for 7 days including current day) to remove any anomalies for the city data.
 
