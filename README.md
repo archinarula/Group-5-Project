@@ -125,7 +125,7 @@ Transformed city data to get 7 day average per 100k population
 
 ![PP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/pairplot.png)
 
-## Visualization using Google sheets:
+## Analysis of Project using Google sheets:
 [**Google sheets**](https://docs.google.com/presentation/d/1ZVr5sjjc9tDzyN3UlWber7vavX04F2WQ1VslqYYOfDA/edit?usp=sharing)
 
 ## Tools:
