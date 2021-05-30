@@ -31,18 +31,14 @@ The purpose of this study is to analyse if colder and dryer weather increases th
 
 **Variables:** 
 1.  Dependent: One of the following:
-    -   Covid 19 new cases per 100,000 population: new_cases_per_100K
-2.  Independent Variables: 
-    - Moving 7 day average of new cases  i,e from reported -6 to the reported date: mavg_7day_new_cases
-    - Moving 7 day average of new cases per 100 K of population: mavg_7day_per_100k_new_cases
-    - Average daily temparture: daily_temp
-    - Average daily humidity: daily_humidity
+    -   7day moving avg new cases per 100,000 population: m
+2.  Inependent Variables:
     - Moving 15 day average of daily temperature  I,e from reported -14  to reported date -1: mavg_15_temp
-    - Moving 15 day average of daily humdity (%)  I,e from reported -14 to reported date -1: mavg_15_humidity
+    - Moving 15 day average of daily humdity I,e from reported -14 to reported date -1: mavg_15_humidity
 
 **Scope of project:** The selected cities are New York, and Sao Paulo. Cities are selected based on similar population per 100,000, covid cases, weather differences covid response. 
 
-**Data clean-up:** Using pandas libraries
+## ETL: 01_ETL_FullRefresh.ipynb
 
 ## Data Definition
 
@@ -51,6 +47,8 @@ The purpose of this study is to analyse if colder and dryer weather increases th
 2.  Weather metrics: A combination of variables like daily Average Temperature,Average Humidity.
     -   Average daily temparture in celsius: daily_humidity
     -   Average daily humidity: daily_temp 
+
+image: data dict
 
 
 ## Methodology
@@ -62,7 +60,17 @@ H0: Weather conditions such as average daily temperature, humidity, Moving 15 da
 H1: Weather conditions such as average daily temperature, humidity, Moving 15 day average of daily temperature, Moving 15 day average of daily humdity have effect on the rate of new Covid19 cases in 2 cities
 
 To test our hypothesis, we shall be utilizing one or more of the following models: 
--   Linear Regression Model
+-  Correlation
+-  Linear Regression Model
+
+
+We are following the considerations below to complete the analysis:
+
+- 15 days average temperature and humidity up to the day before  as this is usually the virus incubation period
+- New cases per 100K to compare same size of population
+- Moving 7 days average of new cases per 100K to smooth out any reporting anomalies 
+- We ran correlations to validate the strength of the relationship between the variables. 
+- We ran 3 different regressions , one for each city and one combined. For the combined, we added “is_New York flag” (1= NY, 0=SP)
 
 **Assumptions:** For our modelling purpose we are taking into consideration following assumptions:
 -   There are no extreme deviations in daily average weather parameters
