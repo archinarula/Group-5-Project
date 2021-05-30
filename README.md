@@ -15,3 +15,8 @@ We can do the same analysis for different cities, as the data is included in the
 The source of this data cna be found [here](https://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/covid19/)
 
 I also found the average daily temperature for major cities. You can find the link [here](https://www.kaggle.com/sudalairajkumar/daily-temperature-of-major-cities) 
+
+
+Google presentation
+You can find the link [here](https://docs.google.com/presentation/d/1ZVr5sjjc9tDzyN3UlWber7vavX04F2WQ1VslqYYOfDA/edit?usp=sharing)
+
