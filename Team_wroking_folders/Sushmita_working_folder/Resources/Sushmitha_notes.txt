@@ -1,0 +1,5 @@
+1. We can also include wind speed to our weather data
+2. We can also use box plot to find incorrect data(Outliers) and as line graph(trend plot is already done)
+3. Then we need to know how to fix the incorrect data 
+4. After that we can build the data model 
+5. We can even start with a familiar data model like linear regression model then go for Time series

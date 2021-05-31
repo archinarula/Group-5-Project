@@ -23,23 +23,22 @@ The purpose of this study is to analyse if colder and dryer weather increases th
 
 **Data Source:**  
 
-1.  [Weather Data One time history bulk data for New York City and Sao Paulo City]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
-2.  [New York daily Covid data from NYC Health](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
-3.  [Sao Paulo daily Covid data from SEADE ](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
+1.  [Weather Data]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
+2.  [New York Covid data](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
+3.  [Sao Paulo daily covid data](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
 
+**Data Collection:** Secondary Data Collected from openweathermap and other international observatories
 
 **Variables:** 
-1.  Dependent: After data discovery , following variable was identified to measure the spread of Covid
+1.  Dependent: One of the following:
     -   7day moving avg new cases per 100,000 population: mavg_7day_per_100k_new_cases
-2.  Inependent Variables:After data discovery , following variables were identified to represent weather
+2.  Inependent Variables:
     - Moving 15 day average of daily temperature  I,e from reported -14  to reported date -1: mavg_15_temp
     - Moving 15 day average of daily humdity I,e from reported -14 to reported date -1: mavg_15_humidity
 
 **Scope of project:** The selected cities are New York, and Sao Paulo. Cities are selected based on similar population per 100,000, covid cases, weather differences covid response. 
 
-## ETL: 
-
-After data discovery phase, we identifed the data sources, transformation logic and target data output required for model and co-relation analysis.The details of the ETL can be found in [Jupyter Notebook to perform full refresh for target file Final_Combine_Data](01_ETL_FullRefresh.ipynb)
+## ETL: 01_ETL_FullRefresh.ipynb
 
 ## Data Definition
 
@@ -50,7 +49,7 @@ After data discovery phase, we identifed the data sources, transformation logic 
     -   Average daily humidity: daily_temp 
 3. Final Combine Data dictionary
 
-![data dict](https://github.com/archinarula/Group-5-Project/Images/Data_Dict.png)
+![data dict](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/Data_Dict.png)
 
 
 ## Methodology
@@ -90,9 +89,9 @@ We are following the considerations below to complete the analysis:
 - Performed ETL to get the final variables for city data  like combining two city data set with variables total confirmed cases,cases per million 
 - Weather data was transformed average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
 
-![NYC](https://github.com/archinarula/Group-5-Project/Images/newyork_totalconfirmdataset.png)![SP](https://github.com/archinarula/Group-5-Project/Images/SP_totalconfirmdataset.png)
+![NYC](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/newyork_totalconfirmdataset.png)![SP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_totalconfirmdataset.png)
 
-![SPNew](https://github.com/archinarula/Group-5-Project/Images/SP_newcases_outliers.png)![SPAveNew](https://github.com/archinarula/Group-5-Project/Images/SP_Ave_7day_count.png)
+![SPNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_newcases_outliers.png)![SPAveNew](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_Ave_7day_count.png)
 
 **Result**
 - Some of the transformed new case values were incorrect and Outliers were many 
@@ -108,24 +107,24 @@ We are following the considerations below to complete the analysis:
 
 - Instead of using raw daily new cases, we are using moving average (for 7 days including current day) to remove any anomalies for the city data.
 
-![NYC](https://github.com/archinarula/Group-5-Project/Images/NYC_7day_Avg.png)
+![NYC](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/NYC_7day_Avg.png)
 
-![SP](https://github.com/archinarula/Group-5-Project/Images/SP_7day_Avg.png)
+![SP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_7day_Avg.png)
 
 - To further smoothen the city data 100k population was considered 7 day average per 100k population
 
-![7_AVG_100k](https://github.com/archinarula/Group-5-Project/Images/7-day_avg_100k_newcases.png)
+![7_AVG_100k](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/7-day_avg_100k_newcases.png)
 
 - The new weather data includes variables like average and 15 average for temperature and humidity as incubation period is 15 days 
 
-![15_Ave_temp](https://github.com/archinarula/Group-5-Project/Images/15day_avg_temp.png)
+![15_Ave_temp](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/15day_avg_temp.png)
 
-![15_Ave_humidity](https://github.com/archinarula/Group-5-Project/Images/15day_avg_humidity.png)
+![15_Ave_humidity](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/15day_avg_humidity.png)
 
 
 - Pairplot to see relationship on the various columns in 2 cities i.e between Moving Average New Cases per 100k with Moving Avg 15 days Tempreture and Humidity
 
-![PP](https://github.com/archinarula/Group-5-Project/Images/pairplot.png)
+![PP](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/pairplot.png)
 
 **Statistical Analysis**
 - Sources: [Correlation](https://github.com/archinarula/Group-5-Project/blob/Archana/Archana_WorkingFolder/NewData_Model_Analysis_Regression.ipynb), [Regression](https://github.com/archinarula/Group-5-Project/blob/Archana/Archana_WorkingFolder/NewData_Model_Analysis_Regression.ipynb)
@@ -133,23 +132,23 @@ We are following the considerations below to complete the analysis:
 **Correlation**
 - New York Correlation 
 
-![NYC_C](https://github.com/archinarula/Group-5-Project/Images/NYC_MNew_Correlation.png)
+![NYC_C](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/NYC_MNew_Correlation.png)
 
 - Sau Paulo Correlation
 
-![SP_C](https://github.com/archinarula/Group-5-Project/Images/NYC_MNew_Correlation.png)
+![SP_C](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/NYC_MNew_Correlation.png)
 
 - Correlation between the new transformed data 
 
-![New_Variables](https://github.com/archinarula/Group-5-Project/Images/Correlation_finaldataset.png)
+![New_Variables](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/Correlation_finaldataset.png)
 
 **Regression Model** 
 
-![NYC_Regression](https://github.com/archinarula/Group-5-Project/Images/NYC_MNew_Regression.png)
+![NYC_Regression](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/NYC_MNew_Regression.png)
 
-![SP_Regression](https://github.com/archinarula/Group-5-Project/Images/SP_MNew_Regression.png)
+![SP_Regression](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_MNew_Regression.png)
 
-![SP_NYC_Regression](https://github.com/archinarula/Group-5-Project/Images/SP_NYC_MNew_Regression.png)
+![SP_NYC_Regression](https://github.com/archinarula/Group-5-Project/blob/Sushmita/resources/images_for_readme/SP_NYC_MNew_Regression.png)
 
 
 ## Analysis of Project using Google sheets:
