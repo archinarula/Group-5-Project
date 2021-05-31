@@ -144,7 +144,7 @@ We are following the considerations below to complete the analysis:
 
 ![PP](Images/pairplot.png)
 
-**Statistical Analysis**
+## Statistical Analysis  
 - Sources: [Correlation](NewData_Model_Analysis_Regression.ipynb), [Regression](NewData_Model_Analysis_Regression.ipynb)
 
 **Correlation**
@@ -154,7 +154,7 @@ We are following the considerations below to complete the analysis:
 
 - Sau Paulo Correlation
 
-![SP_C](Images/NYC_MNew_Correlation.png)
+![SP_C](Images/SP_MNew_Correlation.png)
 
 - Correlation between the new transformed data 
 
