@@ -50,7 +50,7 @@ After data discovery phase, we identifed the data sources, transformation logic 
     -   Average daily humidity: daily_temp 
 3. Final Combine Data dictionary
 
-![data dict](Images/Images/Data_Dict.png)
+![data dict](Images/Data_Dict.png)
 
 
 ## Methodology
@@ -90,9 +90,9 @@ We are following the considerations below to complete the analysis:
 - Performed ETL to get the final variables for city data  like combining two city data set with variables total confirmed cases,cases per million 
 - Weather data was transformed average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
 
-![NYC](Images/Images/newyork_totalconfirmdataset.png)![SP](Images/Images/SP_totalconfirmdataset.png)
+![NYC](Images/newyork_totalconfirmdataset.png)![SP](Images/SP_totalconfirmdataset.png)
 
-![SPNew](Images/Images/SP_newcases_outliers.png)![SPAveNew](Images/Images/SP_Ave_7day_count.png)
+![SPNew](Images/SP_newcases_outliers.png)![SPAveNew](Images/SP_Ave_7day_count.png)
 
 **Result**
 - Some of the transformed new case values were incorrect and Outliers were many 
@@ -108,24 +108,24 @@ We are following the considerations below to complete the analysis:
 
 - Instead of using raw daily new cases, we are using moving average (for 7 days including current day) to remove any anomalies for the city data.
 
-![NYC](Images/Images/NYC_7day_Avg.png)
+![NYC](Images/NYC_7day_Avg.png)
 
-![SP](Images/Images/SP_7day_Avg.png)
+![SP](Images/SP_7day_Avg.png)
 
 - To further smoothen the city data 100k population was considered 7 day average per 100k population
 
-![7_AVG_100k](Images/Images/7-day_avg_100k_newcases.png)
+![7_AVG_100k](Images/7-day_avg_100k_newcases.png)
 
 - The new weather data includes variables like average and 15 average for temperature and humidity as incubation period is 15 days 
 
-![15_Ave_temp](Images/Images/15day_avg_temp.png)
+![15_Ave_temp](Images/15day_avg_temp.png)
 
-![15_Ave_humidity](Images/Images/15day_avg_humidity.png)
+![15_Ave_humidity](Images/15day_avg_humidity.png)
 
 
 - Pairplot to see relationship on the various columns in 2 cities i.e between Moving Average New Cases per 100k with Moving Avg 15 days Tempreture and Humidity
 
-![PP](Images/Images/pairplot.png)
+![PP](Images/pairplot.png)
 
 **Statistical Analysis**
 - Sources: [Correlation](Images/blob/Archana/Archana_WorkingFolder/NewData_Model_Analysis_Regression.ipynb), [Regression](Images/blob/Archana/Archana_WorkingFolder/NewData_Model_Analysis_Regression.ipynb)
@@ -133,23 +133,23 @@ We are following the considerations below to complete the analysis:
 **Correlation**
 - New York Correlation 
 
-![NYC_C](Images/Images/NYC_MNew_Correlation.png)
+![NYC_C](Images/NYC_MNew_Correlation.png)
 
 - Sau Paulo Correlation
 
-![SP_C](Images/Images/NYC_MNew_Correlation.png)
+![SP_C](Images/NYC_MNew_Correlation.png)
 
 - Correlation between the new transformed data 
 
-![New_Variables](Images/Images/Correlation_finaldataset.png)
+![New_Variables](Images/Correlation_finaldataset.png)
 
 **Regression Model** 
 
-![NYC_Regression](Images/Images/NYC_MNew_Regression.png)
+![NYC_Regression](Images/NYC_MNew_Regression.png)
 
-![SP_Regression](Images/Images/SP_MNew_Regression.png)
+![SP_Regression](Images/SP_MNew_Regression.png)
 
-![SP_NYC_Regression](Images/Images/SP_NYC_MNew_Regression.png)
+![SP_NYC_Regression](Images/SP_NYC_MNew_Regression.png)
 
 
 ## Analysis of Project using Google sheets:
