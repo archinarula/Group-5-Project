@@ -104,12 +104,15 @@ We are following the considerations below to complete the analysis:
 - In addition the Major cities covid data source has issues with total cases data format since Mar 2021. The data start showing decimal "." as thousand separatore.
 - Due to above mentioned issues we decided not to use the Major cities data and instead use NYC Health and SEADE data.
 
-- **NYC daily total cases from Major Cities covid data]**
-- (Images/newyork_totalconfirmdataset.png)![SP](Images/SP_totalconfirmdataset.png)
+- NYC daily total cases from Major Cities covid data
+- (Images/newyork_totalconfirmdataset.png)
 
-- **SP daily total cases from Major Cities covid data**
+- SP daily total cases from Major Cities covid data
+- ![SP](Images/SP_totalconfirmdataset.png)
+
+- SP daily new cases outlier
 - (Images/SP_newcases_outliers.png)
-- ![SPAveNew](Images/SP_Ave_7day_count.png)
+
 
 
 ### Second round of data discovery:
