@@ -105,13 +105,13 @@ We are following the considerations below to complete the analysis:
 - Due to above mentioned issues we decided not to use the Major cities data and instead use NYC Health and SEADE data.
 
 - NYC daily total cases from Major Cities covid data
-- (Images/newyork_totalconfirmdataset.png)
+- ![NYC_TotalCases](Images/newyork_totalconfirmdataset.png)
 
 - SP daily total cases from Major Cities covid data
-- ![SP](Images/SP_totalconfirmdataset.png)
+- ![SP_TotalCases](Images/SP_totalconfirmdataset.png)
 
 - SP daily new cases outlier
-- (Images/SP_newcases_outliers.png)
+- ![SP_newcases_outliers](Images/SP_newcases_outliers.png)
 
 
 
