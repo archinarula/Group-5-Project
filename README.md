@@ -145,7 +145,7 @@ We are following the considerations below to complete the analysis:
 ![PP](Images/pairplot.png)
 
 ## Statistical Analysis  
-- Sources: [Correlation](NewData_Model_Analysis_Regression.ipynb), [Regression](NewData_Model_Analysis_Regression.ipynb)
+- Sources: [Correlation](NewData_Model_Analysis_Correlation.ipynb), [Regression](NewData_Model_Analysis_Regression.ipynb)
 
 **Correlation**
 - New York Correlation 
