@@ -81,36 +81,43 @@ We are following the considerations below to complete the analysis:
 
 ## Data exploratory Analysis
 
-**First Analysis:**
+### First round of data discovery:
+
 - Started with 4 data sets 
 1.  [Kaggle Weather Data]( https://www.kaggle.com/sudalairajkumar/daily-temperature-of-major-cities)
 2.  [Major Cities Covid Data]( https://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/enfermedades-trasmisibles/covid19/)
 3.  [New York Covid data](https://github.com/nychealth/coronavirus-data)
 4.  [Sao Paulo daily covid data](https://github.com/wcota/covid19br/blob/master/DESCRIPTION.en.md)  
-- Performed ETL to get the final variables for city data  like combining two city data set with variables total confirmed cases,cases per million 
-- Weather data was transformed average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
 
-![NYC](Images/newyork_totalconfirmdataset.png)![SP](Images/SP_totalconfirmdataset.png)
+** Weather Data**
+-	Kaggle weather data only had temperature and missing data. So we decided to get the weather data from openweathermap.org. Due to historical data needed, we decided to do a one time bulk history pull rather than done api call per city per day.
+- 	Weather data was transformed average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
+** Covid Data
+- Decided to use Majore Citites Covid Data with the assumption it has cumulative total covid cases per day. so we can demterin the new cases by comparing yestarday numbers with todays.
+- For percent postivie cases ,we couldn't find a source with daily metrics available for both citis. so we decided not to use this variable as measure for covid spread.
+- Using Major cities covid data source, we performed ETL to get the final variables for city data  like combining two city data set with variables total confirmed cases,cases per million 
+- After calculating new cases, some outlier and simple plot we identified this data source has a dip in June which menas we couldn't use the data prior to June. 
+- In addition the Major cities covid data source has issues with total cases data format since Mar 2021. The data start showing decimal "." as thousand separatore.
+- Due to above mentioned issues we decided not to use the Major cities data and instead use NYC Health and SEADE data.
 
-![SPNew](Images/SP_newcases_outliers.png)![SPAveNew](Images/SP_Ave_7day_count.png)
+![NYC daily total cases from Major Cities covid data](Images/newyork_totalconfirmdataset.png)![SP](Images/SP_totalconfirmdataset.png)
 
-**Result**
-- Some of the transformed new case values were incorrect and Outliers were many 
-- We found other data sources that are more reliable repeated exploratory analysis in Excel
+![SP daily total cases from Major Cities covid data](Images/SP_newcases_outliers.png)![SPAveNew](Images/SP_Ave_7day_count.png)
 
-**Second Analysis**
+
+### Second round of data discovery:
 - We used different data sources
 1.  [Weather Data]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
 2.  [New York Covid data](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
 3.  [Sao Paulo daily covid data](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
 
-- Source for Data exploration in: [Excel Analysis](Images/blob/main/aisha_working_folder/Comparativo-ciudades%20vs%20github%20data%20source%20comparison.xlsx) 
+- Source for Data exploration in: [Excel Analysis](00_data_discovery_phase.xlsx) 
 
 - Instead of using raw daily new cases, we are using moving average (for 7 days including current day) to remove any anomalies for the city data.
 
-![NYC](Images/NYC_7day_Avg.png)
+![New York Daily new cases vs new cases 7 day moving average](Images/NYC_7day_Avg.png)
 
-![SP](Images/SP_7day_Avg.png)
+![Sao Paulo Daily new cases vs new cases 7 day moving average](Images/SP_7day_Avg.png)
 
 - To further smoothen the city data 100k population was considered 7 day average per 100k population
 
