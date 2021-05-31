@@ -89,10 +89,14 @@ We are following the considerations below to complete the analysis:
 3.  [New York Covid data](https://github.com/nychealth/coronavirus-data)
 4.  [Sao Paulo daily covid data](https://github.com/wcota/covid19br/blob/master/DESCRIPTION.en.md)  
 
-** Weather Data**
+**Weather Data**
+
 -	Kaggle weather data only had temperature and missing data. So we decided to get the weather data from openweathermap.org. Due to historical data needed, we decided to do a one time bulk history pull rather than done api call per city per day.
 - 	Weather data was transformed average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
-** Covid Data
+
+**Covid Data**
+
+
 - Decided to use Majore Citites Covid Data with the assumption it has cumulative total covid cases per day. so we can demterin the new cases by comparing yestarday numbers with todays.
 - For percent postivie cases ,we couldn't find a source with daily metrics available for both citis. so we decided not to use this variable as measure for covid spread.
 - Using Major cities covid data source, we performed ETL to get the final variables for city data  like combining two city data set with variables total confirmed cases,cases per million 
@@ -100,9 +104,12 @@ We are following the considerations below to complete the analysis:
 - In addition the Major cities covid data source has issues with total cases data format since Mar 2021. The data start showing decimal "." as thousand separatore.
 - Due to above mentioned issues we decided not to use the Major cities data and instead use NYC Health and SEADE data.
 
-![NYC daily total cases from Major Cities covid data](Images/newyork_totalconfirmdataset.png)![SP](Images/SP_totalconfirmdataset.png)
+- **NYC daily total cases from Major Cities covid data]**
+- (Images/newyork_totalconfirmdataset.png)![SP](Images/SP_totalconfirmdataset.png)
 
-![SP daily total cases from Major Cities covid data](Images/SP_newcases_outliers.png)![SPAveNew](Images/SP_Ave_7day_count.png)
+- **SP daily total cases from Major Cities covid data**
+- (Images/SP_newcases_outliers.png)
+- ![SPAveNew](Images/SP_Ave_7day_count.png)
 
 
 ### Second round of data discovery:
@@ -135,7 +142,7 @@ We are following the considerations below to complete the analysis:
 ![PP](Images/pairplot.png)
 
 **Statistical Analysis**
-- Sources: [Correlation](Images/blob/Archana/Archana_WorkingFolder/NewData_Model_Analysis_Regression.ipynb), [Regression](Images/blob/Archana/Archana_WorkingFolder/NewData_Model_Analysis_Regression.ipynb)
+- Sources: [Correlation](NewData_Model_Analysis_Regression.ipynb), [Regression](NewData_Model_Analysis_Regression.ipynb)
 
 **Correlation**
 - New York Correlation 
