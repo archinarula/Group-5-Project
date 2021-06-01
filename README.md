@@ -73,6 +73,8 @@ We are following the considerations below to complete the analysis:
 - Moving 7 days average of new cases per 100K to smooth out any reporting anomalies 
 - We ran correlations to validate the strength of the relationship between the variables. 
 - We ran 3 different regressions , one for each city and one combined. For the combined, we added “is_New York flag” (1= NY, 0=SP)
+- Selecte date range is from Feb 29,2020 to May 16,2021
+- We didn't split target into train and test due to time sereis impact and limited amount of data. Model is evalauted using actual y vs predicted y.
 
 **Assumptions:** For our modelling purpose we are taking into consideration following assumptions:
 -   There are no extreme deviations in daily average weather parameters
