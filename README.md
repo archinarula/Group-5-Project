@@ -44,7 +44,7 @@ After data discovery phase, we identifed the data sources, transformation logic 
 ## Data Definition
 
 1. Covid metrcis:
-    -   Covid19 rate: Total number of Covid cases by 100k inhabitants reported in selected cities per capital population (New daily case / City Population) 
+    -   Covid19 rate: New daily Covid cases by 100k inhabitants reported in selected cities per capital population (New daily case / City Population) 
 2.  Weather metrics: A combination of variables like daily Average Temperature,Average Humidity.
     -   Average daily temparture in celsius: daily_humidity
     -   Average daily humidity: daily_temp 
