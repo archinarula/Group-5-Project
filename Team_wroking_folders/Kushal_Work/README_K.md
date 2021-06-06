@@ -44,7 +44,7 @@ After data discovery phase, we identifed the data sources, transformation logic 
 ## Data Definition
 
 1. Covid metrcis:
-    -   Covid19 rate: Total number of Covid cases by 100k inhabitants reported in selected cities per capital population (New daily case / City Population) 
+    -   Covid19 rate: New daily Covid cases by 100k inhabitants reported in selected cities per capital population (New daily case / City Population) 
 2.  Weather metrics: A combination of variables like daily Average Temperature,Average Humidity.
     -   Average daily temparture in celsius: daily_humidity
     -   Average daily humidity: daily_temp 
@@ -73,6 +73,8 @@ We are following the considerations below to complete the analysis:
 - Moving 7 days average of new cases per 100K to smooth out any reporting anomalies 
 - We ran correlations to validate the strength of the relationship between the variables. 
 - We ran 3 different regressions , one for each city and one combined. For the combined, we added “is_New York flag” (1= NY, 0=SP)
+- Selecte date range is from Feb 29,2020 to May 16,2021
+- We didn't split target into train and test due to time sereis impact and limited amount of data. Model is evalauted using actual y vs predicted y.
 
 **Assumptions:** For our modelling purpose we are taking into consideration following assumptions:
 -   There are no extreme deviations in daily average weather parameters
@@ -144,8 +146,8 @@ We are following the considerations below to complete the analysis:
 
 ![PP](Images/pairplot.png)
 
-**Statistical Analysis**
-- Sources: [Correlation](NewData_Model_Analysis_Regression.ipynb), [Regression](NewData_Model_Analysis_Regression.ipynb)
+## Statistical Analysis  
+- Sources: [Correlation](NewData_Model_Analysis_Correlation.ipynb), [Regression](NewData_Model_Analysis_Regression.ipynb)
 
 **Correlation**
 - New York Correlation 
@@ -181,5 +183,3 @@ We are following the considerations below to complete the analysis:
 - **Slack group** created for coordination and exchange of ideas/information
 - **Weekdays daily calls** to syncup progress and define next steps
 - **Weekend calls** to refine outputs and prepare submission for the week
-
-Challenges
