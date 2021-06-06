@@ -170,8 +170,8 @@ We are following the considerations below to complete the analysis:
 
 
 ## Analysis of Project using Google sheets:
-[**Google sheets**](https://docs.google.com/presentation/d/1ZVr5sjjc9tDzyN3UlWber7vavX04F2WQ1VslqYYOfDA/edit?usp=sharing)
-
+[**Presentation Google link**](https://drive.google.com/file/d/17RzsmALKxAVrjdY_FZRhpZPeYnp8apSj/view?usp=sharing)
+[**Presentation Git hub link**](Group_5-Final Presentation_v3.ppt)
 ## Tools:
 1.  **Data Analysis:** Python
 2.  **Data Storage (Database):** PostgreSQL but later we did not use database as the data set size was small
@@ -181,5 +181,3 @@ We are following the considerations below to complete the analysis:
 - **Slack group** created for coordination and exchange of ideas/information
 - **Weekdays daily calls** to syncup progress and define next steps
 - **Weekend calls** to refine outputs and prepare submission for the week
-
-Challenges
