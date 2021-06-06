@@ -154,7 +154,7 @@ We are following the considerations below to complete the analysis:
 
 - Sau Paulo Correlation
 
-![SP_C](Images/NYC_MNew_Correlation.png)
+![SP_C](Images/SP_MNew_Correlation.png)
 
 - Correlation between the new transformed data 
 
@@ -181,3 +181,5 @@ We are following the considerations below to complete the analysis:
 - **Slack group** created for coordination and exchange of ideas/information
 - **Weekdays daily calls** to syncup progress and define next steps
 - **Weekend calls** to refine outputs and prepare submission for the week
+
+Challenges
