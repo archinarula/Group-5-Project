@@ -1,4 +1,5 @@
 # Impact of climate variables on Covid 19 cases
+
 ## Introduction 
 
 The new novel corona virus known as Covid19 (SARS CoV-2), has caused one of the most serious health crises globally. Since its global spread last year, we've seen multiple news article around the impact of temperature and humidity on the speed of spread and whetheer or not virus thrive in colder temerpatur.
@@ -17,34 +18,42 @@ The first link is a study done at the beigning of 2020 by University of Oxford a
 
 ## Purpose
 
-The purpose of this study is to analyse if colder and dryer weather increases the spredh of Covid-19 virus. More specificaly find the realtion and quatify the increase in spread with temperature drop of every x degree celsius or percipatation dropped by y%.
+The purpose of this study is to analyse if colder and dryer weather increases the spread of Covid-19 virus. More specificaly find the realtion and quatify the increase in spread with temperature drop of every x degree celsius or percipatation dropped by y%.
 
 ## Data
 
-**Data Source:**  
+### Data Sources:  
 
 1.  [Weather Data One time history bulk data for New York City and Sao Paulo City]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
 2.  [New York daily Covid data from NYC Health](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
 3.  [Sao Paulo daily Covid data from SEADE ](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
 
 
-**Variables:** 
-1.  Dependent: After data discovery , following variable was identified to measure the spread of Covid
+### Variables: 
+1.  Dependent: After data discovery , following variable was identified to measure the spread of Covid19. 
     -   7day moving avg new cases per 100,000 population: mavg_7day_per_100k_new_cases
 2.  Inependent Variables:After data discovery , following variables were identified to represent weather
     - Moving 15 day average of daily temperature  I,e from reported -14  to reported date -1: mavg_15_temp
     - Moving 15 day average of daily humdity I,e from reported -14 to reported date -1: mavg_15_humidity
 
-**Scope of project:** The selected cities are New York, and Sao Paulo. Cities are selected based on similar population per 100,000, covid cases, weather differences covid response. 
+### Data Scope:
 
-## ETL: 
+The project scope is limited to the data for following two citites.
+1.	New York City
+2.	Sao Paulo City
 
-After data discovery phase, we identifed the data sources, transformation logic and target data output required for model and co-relation analysis.The details of the ETL can be found in [Jupyter Notebook to perform full refresh for target file Final_Combine_Data](01_ETL_FullRefresh.ipynb)
+These cities were selected based common understanding about :
+-	Similiar population 
+-	no of covid cases 
+-	Social distancing and lockdown measures and citizens compliance to those measure
+-	but with some variation in weather
 
-## Data Definition
+## Data Definition (Source and Target)
+
+### Source data defintion
 
 1. Covid metrcis:
-    -   Covid19 rate: Total number of Covid cases by 100k inhabitants reported in selected cities per capital population (New daily case / City Population) 
+    -   Covid19 rate: Total number of Covid cases by 100k inhabitants reported in selected cities per capital population ((New daily case / City Population) *100000) 
 2.  Weather metrics: A combination of variables like daily Average Temperature,Average Humidity.
     -   Average daily temparture in celsius: daily_humidity
     -   Average daily humidity: daily_temp 
@@ -52,6 +61,9 @@ After data discovery phase, we identifed the data sources, transformation logic 
 
 ![data dict](Images/Data_Dict.png)
 
+## ETL: 
+
+After data discovery phase, we identifed the data sources, transformation logic and target data output required for model and co-relation analysis.The details of the ETL can be found in [Jupyter Notebook to perform full refresh for target file Final_Combine_Data](01_ETL_FullRefresh.ipynb)
 
 ## Methodology
 
@@ -68,10 +80,10 @@ To test our hypothesis, we shall be utilizing one or more of the following model
 
 We are following the considerations below to complete the analysis:
 
-- 15 days average temperature and humidity up to the day before  as this is usually the virus incubation period
+- 15 days average temperature and humidity up to the day before as this is usually the virus incubation period
 - New cases per 100K to compare same size of population
 - Moving 7 days average of new cases per 100K to smooth out any reporting anomalies 
-- We ran correlations to validate the strength of the relationship between the variables. 
+- Corelation using different methods . 
 - We ran 3 different regressions , one for each city and one combined. For the combined, we added “is_New York flag” (1= NY, 0=SP)
 
 **Assumptions:** For our modelling purpose we are taking into consideration following assumptions:
@@ -113,6 +125,11 @@ We are following the considerations below to complete the analysis:
 - SP daily new cases (calcualted) outlier using Major cities Covid data source
 ![SP_newcases_outliers](Images/SP_newcases_outliers.png)
 
+- NYC daily new cases per 100K vs daily average temperature
+![NYC_daily_covid_vs_temp](Images/NY_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
+
+-	SPC daily new cases per 100K vs daily average temperature
+![SPC_daily_covid_vs_temp](Images/SP_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
 
 
 ### Second round of data discovery:
@@ -145,7 +162,10 @@ We are following the considerations below to complete the analysis:
 ![PP](Images/pairplot.png)
 
 **Statistical Analysis**
-- Sources: [Correlation](NewData_Model_Analysis_Regression.ipynb), [Regression](NewData_Model_Analysis_Regression.ipynb)
+- Correlation analysis: [Correlation](03_Model_Analysis_Correlation.ipynb)
+- [3 Datasets Regression using all 14.5 month data and using both temp and humidity](04_Model_Analysis_Regression_AllData_TempAndHumidity.ipynb)
+- [3 Datasets Regression using all 14.5 month data and using only temp or only humidity](05_Model_Analysis_Regression_AllData_TempOnly.ipynb)
+- [3 Datasets regression using 13.5 months data for train and 1 month for test](06_Regression_train_test.ipynb)
 
 **Correlation**
 - New York Correlation 
@@ -172,6 +192,7 @@ We are following the considerations below to complete the analysis:
 ## Analysis of Project using Google sheets:
 [**Presentation Google link**](https://drive.google.com/file/d/17RzsmALKxAVrjdY_FZRhpZPeYnp8apSj/view?usp=sharing)
 [**Presentation Git hub link**](Group_5-Final Presentation_v3.ppt)
+
 ## Tools:
 1.  **Data Analysis:** Python
 2.  **Data Storage (Database):** PostgreSQL but later we did not use database as the data set size was small
