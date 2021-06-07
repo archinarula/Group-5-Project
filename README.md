@@ -238,13 +238,13 @@ During this phase of model run, we used all 14.5 months data for training on 3 d
 **Using temeprature ONLY for weather:**
 
 -	**New York regression model using full 14.5 months data for training:**
-![NYC_temponly_Regression](Images/NYC_MNew_tempOnly_Regression.png)
+![NYC_temponly_Regression](Images/NYC_MNew_tempOnly_Regression.PNG)
 
 -	**Sao Pulo regression model using full 14.5 months data for training:**
-![SP_temponly_Regression](Images/SP_MNew_tempOnly_Regression.png)
+![SP_temponly_Regression](Images/SP_MNew_tempOnly_Regression.PNG)
 
 -	**Combined New York and Sao Pulo regression model using full 14.5 months data for training:**
-![SP_NYC_temponly_Regression](Images/SP_NYC_MNew_tempOnly_Regression.png)
+![SP_NYC_temponly_Regression](Images/SP_NYC_MNew_tempOnly_Regression.PNG)
 
 #### Conclusion using all 14.5 months data
 
@@ -258,16 +258,16 @@ During this phase of model run, we used all 14.5 months data for training on 3 d
 During this phase of model, we train model using 13.5 months of data (from Feb 29,200 to Apr 15, 2021) on 3 different data sets. we used both temperature and humditiy from weather data.
 
 -	**New York regression model using full 13.5 months data for training:**
-![NYC_traintest_Regression](Images/NYC_MNew_train_test_Regression.png)
+![NYC_traintest_Regression](Images/NYC_MNew_train_test_Regression.PNG)
 
 -	**Sao Pulo regression model using full 13.5 months data for training:**
-![SP_traintest_Regression](Images/SP_MNew_train_test_Regression.png)
+![SP_traintest_Regression](Images/SP_MNew_train_test_Regression.PNG)
 
 -	**Combined New York and Sao Pulo regression model using full 13.5 months data for training:**
-![SP_NYC_traintest_Regression](Images/SP_NYC_MNew_train_test_Regression.png)
+![SP_NYC_traintest_Regression](Images/SP_NYC_MNew_train_test_Regression.PNG)
 
 -	** p-values from OLS method using combined data and 13.5 months of data used for training:**
-![SP_NYC_OLS_MODEL_P_Value](Images/p_value_using_combined_test_train_OLS_model.png)
+![SP_NYC_OLS_MODEL_P_Value](Images/p_value_using_combined_test_train_OLS_model.PNG)
 
 #### Conclusion from model using 13.5 monnths data for training
 
