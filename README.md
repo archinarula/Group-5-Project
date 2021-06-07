@@ -22,21 +22,21 @@ The purpose of this study is to analyse if colder and dryer weather increases th
 
 ## Data
 
-###**Data Source:**  
+### Data Sources:  
 
 1.  [Weather Data One time history bulk data for New York City and Sao Paulo City]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
 2.  [New York daily Covid data from NYC Health](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
 3.  [Sao Paulo daily Covid data from SEADE ](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
 
 
-###**Variables:** 
+### Variables: 
 1.  Dependent: After data discovery , following variable was identified to measure the spread of Covid19. 
     -   7day moving avg new cases per 100,000 population: mavg_7day_per_100k_new_cases
 2.  Inependent Variables:After data discovery , following variables were identified to represent weather
     - Moving 15 day average of daily temperature  I,e from reported -14  to reported date -1: mavg_15_temp
     - Moving 15 day average of daily humdity I,e from reported -14 to reported date -1: mavg_15_humidity
 
-###**Data Scope:** 
+### Data Scope:
 
 The project scope is limited to the data for following two citites.
 1.	New York City
@@ -126,10 +126,10 @@ We are following the considerations below to complete the analysis:
 ![SP_newcases_outliers](Images/SP_newcases_outliers.png)
 
 - NYC daily new cases per 100K vs daily average temperature
-![NYC daily covid vs temp](NY_7Day_ Avg_ NewCases_ per_100k_and_ Avg_15Day_Temp.png)
+![NYC_daily_covid_vs_temp](NY_7Day_ Avg_ NewCases_ per_100k_and_ Avg_15Day_Temp.png)
 
-- SPC daily new cases per 100K vs daily average temperature
-![SPC daily covid vs temp](SP_7Day_ Avg_ NewCases_ per_100k_and_ Avg_15Day_Temp.png)
+-	SPC daily new cases per 100K vs daily average temperature
+![SPC_daily_covid_vs_temp](SP_7Day_ Avg_ NewCases_ per_100k_and_ Avg_15Day_Temp.png)
 
 
 ### Second round of data discovery:
