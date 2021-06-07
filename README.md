@@ -25,7 +25,7 @@ The purpose of this study is to analyse if colder and dryer weather increases th
 ### Data Sources:  
 
 1.  [Weather Data One time history bulk data for New York City and Sao Paulo City]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
-2.  [New York daily Covid data from NYC Health](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
+2.  [New York daily Covid data from New York CityHealth](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
 3.  [Sao Paulo daily Covid data from SEADE ](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
 
 
@@ -59,6 +59,8 @@ These cities were selected based common understanding about :
     -   Average daily humidity: daily_temp 
 3. Final Combine Data dictionary
 
+### Target data defintion
+
 ![data dict](Images/Data_Dict.png)
 
 ## ETL: 
@@ -69,9 +71,9 @@ After data discovery phase, we identifed the data sources, transformation logic 
 
 To analyse the impact of weather on Covid19 rate of new cases, we shall be doing hypothesis testing and try to find out whether factors like temperature, humidity and their averages have any relationship with the rate of Covid19 infections.
 
-H0: Weather conditions such as average daily temperature, humidity, Moving 15 day average of daily temperature, Moving 15 day average of daily humdity have no effect on the rate of new Covid19 cases in 2 cities
+1.	H0: Weather conditions such as average daily temperature, humidity, Moving 15 day average of daily temperature, Moving 15 day average of daily humdity have no effect on the rate of new Covid19 cases in 2 cities.
 
-H1: Weather conditions such as average daily temperature, humidity, Moving 15 day average of daily temperature, Moving 15 day average of daily humdity have effect on the rate of new Covid19 cases in 2 cities
+2.	H1: Weather conditions such as average daily temperature, humidity, Moving 15 day average of daily temperature, Moving 15 day average of daily humdity have effect on the rate of new Covid19 cases in 2 cities.
 
 To test our hypothesis, we shall be utilizing one or more of the following models: 
 -  Correlation
@@ -84,16 +86,16 @@ We are following the considerations below to complete the analysis:
 - New cases per 100K to compare same size of population
 - Moving 7 days average of new cases per 100K to smooth out any reporting anomalies 
 - Corelation using different methods . 
-- We ran 3 different regressions , one for each city and one combined. For the combined, we added “is_New York flag” (1= NY, 0=SP)
+- We ran different regressions using 3 data sets: one for each city and one combined. For the combined, we added “is_New York flag” (1= NY, 0=SP)
 
 **Assumptions:** For our modelling purpose we are taking into consideration following assumptions:
 -   There are no extreme deviations in daily average weather parameters
 -   Covid testing was available with similar opportunities to the residents of both cities
 -   All or none Covid19 precautions were followed by residents of both of the cities 
 
-## Data exploratory Analysis
+## Data Analysis
 
-### First round of data discovery:
+### Data Selection Phase 1
 
 - Started with 4 data sets 
 1.  [Kaggle Weather Data]( https://www.kaggle.com/sudalairajkumar/daily-temperature-of-major-cities)
@@ -101,12 +103,12 @@ We are following the considerations below to complete the analysis:
 3.  [New York Covid data](https://github.com/nychealth/coronavirus-data)
 4.  [Sao Paulo daily covid data](https://github.com/wcota/covid19br/blob/master/DESCRIPTION.en.md)  
 
-**Weather Data**
+**Weather Data:**
 
 -	Kaggle weather data only had temperature and missing data. So we decided to get the weather data from openweathermap.org. Due to historical data needed, we decided to do a one time bulk history pull rather than done api call per city per day.
 - 	Weather data was transformed average temperature, average humidity, 1-7 day average, 8-14 day average, percentage change for temperature and humidity variables
 
-**Covid Data**
+**Covid Data:**
 
 
 - Decided to use Majore Citites Covid Data with the assumption it has cumulative total covid cases per day. so we can demterin the new cases by comparing yestarday numbers with todays.
@@ -114,41 +116,53 @@ We are following the considerations below to complete the analysis:
 - Using Major cities covid data source, we performed ETL to get the final variables for city data  like combining two city data set with variables total confirmed cases,cases per million 
 - After calculating new cases, some outlier and simple plot we identified this data source has a dip in June which menas we couldn't use the data prior to June. 
 - In addition the Major cities covid data source has issues with total cases data format since Mar 2021. The data start showing decimal "." as thousand separatore.
-- Due to above mentioned issues we decided not to use the Major cities data and instead use NYC Health and SEADE data.
+- Due to above mentioned issues we decided not to use the Major cities data and instead use New York CityHealth and SEADE data.
 
-- NYC daily total cases using Major cities Covid data source
+**Below are the screenshots from data issues found in the Major Cities Covid data:**
+
+- Below is New York Citydaily total cases using Major Cities Covid data source 
 ![NYC_TotalCases](Images/newyork_totalconfirmdataset.png)
 
-- SP daily total cases using Major cities Covid data source
+- Sao Paulo city's daily total cases using Major cities Covid data source
 ![SP_TotalCases](Images/SP_totalconfirmdataset.png)
 
-- SP daily new cases (calcualted) outlier using Major cities Covid data source
-![SP_newcases_outliers](Images/SP_newcases_outliers.png)
+- New York city's daily new cases (calcualted) outlier using Major cities Covid data source
+![SP_newcases_outliers](Images/NY_Ave_7day_count.png)
 
-- NYC daily new cases per 100K vs daily average temperature
-![NYC_daily_covid_vs_temp](Images/NY_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
+- Sao Paulo city's daily new cases (calcualted) outlier using Major cities Covid data source
+![SP_newcases_outliers](Images/SP_Ave_7day_count.png)
 
--	SPC daily new cases per 100K vs daily average temperature
-![SPC_daily_covid_vs_temp](Images/SP_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
+**CONLCUSION:**
 
+We decided not to use Majori Cities Covid data and Kaggle weather data. Instead we found covid data from New York CityHealth and Seade Foundation for Sao Paulo.
 
-### Second round of data discovery:
-- We used different data sources
+### Data Selection and preliminary analysis
+
+- We found following data sources reliable source of covid data and weather data.
+
 1.  [Weather Data]( https://history.openweathermap.org/storage/fa037ddb81b7f7f0a0d1a0ebd131858e.csv)
 2.  [New York Covid data](https://github.com/nychealth/coronavirus-data/blob/master/trends/data-by-day.csv)
 3.  [Sao Paulo daily covid data](https://raw.githubusercontent.com/seade-R/dados-covid-sp/master/data/dados_covid_sp.csv)
 
-- Source for Data exploration in: [Excel Analysis](00_data_discovery_phase.xlsx) 
+- A quick analysis is done in Excel to evalutate qualtify of data and initial data analysis: [Excel Analysis](00_data_discovery_phase.xlsx) 
 
-- Instead of using raw daily new cases, we are using moving average (for 7 days including current day) to remove any anomalies for the city data.
+- Below charts show that using moving 7 day average for new cases is a better choice as it will remove any reported anamolies found in reported new cases for two cities.
+
+**New York City daily new cases vs 7 days moving averages of new cases:**
 
 ![New York Daily new cases vs new cases 7 day moving average](Images/NYC_7day_Avg.png)
 
+**Sao Paulo City daily new cases vs 7 days moving averages of new cases:**
+
 ![Sao Paulo Daily new cases vs new cases 7 day moving average](Images/SP_7day_Avg.png)
 
-- To further smoothen the city data 100k population was considered 7 day average per 100k population
+- To further smoothen the city data 7 day moving average per 100k population was pciked for modeling.
+
+**Compare New York city and Sao Paulo city using 7 days moving averages of new cases:**
 
 ![7_AVG_100k](Images/7-day_avg_100k_newcases.png)
+
+**New York City and Sao Paulo City weather data:**
 
 - The new weather data includes variables like average and 15 average for temperature and humidity as incubation period is 15 days 
 
@@ -156,18 +170,35 @@ We are following the considerations below to complete the analysis:
 
 ![15_Ave_humidity](Images/15day_avg_humidity.png)
 
+**Compare New York City 7 days moving averages of new cases per 100K population vs New York daily average temperature:**
 
-- Pairplot to see relationship on the various columns in 2 cities i.e between Moving Average New Cases per 100k with Moving Avg 15 days Tempreture and Humidity
+- New York Citydaily new cases per 100K vs daily average temperature
+![NYC_daily_covid_vs_temp](Images/NY_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
 
-![PP](Images/pairplot.png)
+**Compare Sao Paulo City 7 days moving averages of new cases per 100K population vs New York daily average temperature:**
+-	SPC daily new cases per 100K vs daily average temperature
+![SPC_daily_covid_vs_temp](Images/SP_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
 
-**Statistical Analysis**
+#### Concludsion from preliminary data analysis
+
+1.	New York city new cases and daily average temperature followed simliar trend.
+2.	Sao Paulo City 2020 data for new caes and temperature have similar trend but 2021 covid cases doesn't follow the daily temperature trend closely.
+3.	New York City weather temperature variaes a lot throughout the year, while Sao Paulo temperature swings between seasons staing within 10-25 degree celsius. 
+4.	Both cities humidity level throughouu the year stays above 40% .
+
+
+## Models and correlation 
+
+**Link to jupyter notebooks**
 - Correlation analysis: [Correlation](03_Model_Analysis_Correlation.ipynb)
 - [3 Datasets Regression using all 14.5 month data and using both temp and humidity](04_Model_Analysis_Regression_AllData_TempAndHumidity.ipynb)
 - [3 Datasets Regression using all 14.5 month data and using only temp or only humidity](05_Model_Analysis_Regression_AllData_TempOnly.ipynb)
 - [3 Datasets regression using 13.5 months data for train and 1 month for test](06_Regression_train_test.ipynb)
 
-**Correlation**
+### Correlation
+
+For correlations, we used spearman correlation as it works better with non linear realtionship.
+
 - New York Correlation 
 
 ![NYC_C](Images/NYC_MNew_Correlation.png)
@@ -176,22 +207,95 @@ We are following the considerations below to complete the analysis:
 
 ![SP_C](Images/SP_MNew_Correlation.png)
 
-- Correlation between the new transformed data 
+- All viarbales correlation between the new transformed data 
 
 ![New_Variables](Images/Correlation_finaldataset.png)
 
-**Regression Model** 
 
+- Pairplot to see relationship on the various columns in 2 cities i.e between Moving Average New Cases per 100k with Moving Avg 15 days Tempreture and Humidity
+
+![PP](Images/pairplot.png)
+
+### Regression Model
+
+#### Using all data for training
+
+
+During this phase of model run, we used all 14.5 months data for training on 3 different data sets (one for each city and one combined cities data)
+
+**Using both temeprature and humidity for weather:**
+
+-	**New York regression model using full 14.5 months data for training:**
 ![NYC_Regression](Images/NYC_MNew_Regression.png)
 
+-	**Sao Pulo regression model using full 14.5 months data for training:**
 ![SP_Regression](Images/SP_MNew_Regression.png)
 
+-	**Combined New York and Sao Pulo regression model using full 14.5 months data for training:**
 ![SP_NYC_Regression](Images/SP_NYC_MNew_Regression.png)
 
 
+**Using temeprature ONLY for weather:**
+
+-	**New York regression model using full 14.5 months data for training:**
+![NYC_temponly_Regression](Images/NYC_MNew_tempOnly_Regression.PNG)
+
+-	**Sao Pulo regression model using full 14.5 months data for training:**
+![SP_temponly_Regression](Images/SP_MNew_tempOnly_Regression.PNG)
+
+-	**Combined New York and Sao Pulo regression model using full 14.5 months data for training:**
+![SP_NYC_temponly_Regression](Images/SP_NYC_MNew_tempOnly_Regression.PNG)
+
+#### Conclusion using all 14.5 months data
+
+1.	Temperature only model had lower accuracy compared to temperature and humidity both to define weather. 
+2.  While New York only model gives a much higher accuracy then combined or Sao Paulo only, but model will not give better prediction for Sao Paulo
+3.  Combined cities data has accuracy dropped by 1/2 compared to New York only accuracy. But it can predict both cities.
+4. 	Eventhough the accuracy rate is high with no test data, the accuracy rate is lowe and with no test data it is overfitting. 
+
+### Using 1 month for testing and 13.5 months for training
+
+During this phase of model, we train model using 13.5 months of data (from Feb 29,200 to Apr 15, 2021) on 3 different data sets. we used both temperature and humditiy from weather data.
+
+-	**New York regression model using full 13.5 months data for training:**
+![NYC_traintest_Regression](Images/NYC_MNew_train_test_Regression.PNG)
+
+-	**Sao Pulo regression model using full 13.5 months data for training:**
+![SP_traintest_Regression](Images/SP_MNew_train_test_Regression.PNG)
+
+-	**Combined New York and Sao Pulo regression model using full 13.5 months data for training:**
+![SP_NYC_traintest_Regression](Images/SP_NYC_MNew_train_test_Regression.PNG)
+
+-	** p-values from OLS method using combined data and 13.5 months of data used for training:**
+![SP_NYC_OLS_MODEL_P_Value](Images/p_value_using_combined_test_train_OLS_model.PNG)
+
+#### Conclusion from model using 13.5 monnths data for training
+
+1.	The negative R-squared values from individual cities models are going to results in wrong model.
+2.	In addition we conclude that while model trained on 13.5 months data for combined cities has 37% accuracy, but we should use this as final model as it follows best practices.
+3.	Based on p values from different models and final model, we failed null hypthoesise. 
+4.	Low accruacy means that our final model is not good enough to predict impact of change in temperature or humdity on new covid cases.
+### Future analysis recomendation
+
+We concluded that there are certain other factors that are impacting the covid spread which were out of scope of this project. In order to further improve our model, we've following recomendations:
+
+1.	Remove impact of other variables if can be measured.
+	
+	-	vaccination rate
+	-	Positive cases related to Brazilian mutant, which spread faster than the original.
+	-	Active cases in the city
+	-	Complaince to lockdown restrictions
+
+2.	Run the analysis using additional city data with similar cities.
+
+	-	Add more cities with diverse conditions to understand the behavior of Covid cases compare to different temperatures
+
+3.	Use time series methodologies on the new cases variable before running the regression
+
+
 ## Analysis of Project using Google sheets:
-[**Presentation Google link**](https://drive.google.com/file/d/17RzsmALKxAVrjdY_FZRhpZPeYnp8apSj/view?usp=sharing)
-[**Presentation Git hub link**](Group_5-Final Presentation_v3.ppt)
+-	[**Presentation Google link**](https://drive.google.com/file/d/17RzsmALKxAVrjdY_FZRhpZPeYnp8apSj/view?usp=sharing)
+-	[**Presentation Git hub link**](Group_5_Final_Presentation_v3.ppt)
 
 ## Tools:
 1.  **Data Analysis:** Python
