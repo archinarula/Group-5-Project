@@ -126,10 +126,10 @@ We are following the considerations below to complete the analysis:
 ![SP_newcases_outliers](Images/SP_newcases_outliers.png)
 
 - NYC daily new cases per 100K vs daily average temperature
-![NYC_daily_covid_vs_temp](Images/NY_7Day_ Avg_ NewCases_ per_100k_and_ Avg_15Day_Temp.png)
+![NYC_daily_covid_vs_temp](Images/NY_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
 
 -	SPC daily new cases per 100K vs daily average temperature
-![SPC_daily_covid_vs_temp](Images/SP_7Day_ Avg_ NewCases_ per_100k_and_ Avg_15Day_Temp.png)
+![SPC_daily_covid_vs_temp](Images/SP_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
 
 
 ### Second round of data discovery:
