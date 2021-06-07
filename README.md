@@ -294,8 +294,8 @@ We concluded that there are certain other factors that are impacting the covid s
 
 
 ## Analysis of Project using Google sheets:
-[**Presentation Google link**](https://drive.google.com/file/d/17RzsmALKxAVrjdY_FZRhpZPeYnp8apSj/view?usp=sharing)
-[**Presentation Git hub link**](Group_5-Final Presentation_v3.ppt)
+-	[**Presentation Google link**](https://drive.google.com/file/d/17RzsmALKxAVrjdY_FZRhpZPeYnp8apSj/view?usp=sharing)
+-	[**Presentation Git hub link**](Group_5_Final_Presentation_v3.ppt)
 
 ## Tools:
 1.  **Data Analysis:** Python
