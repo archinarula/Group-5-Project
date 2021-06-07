@@ -187,10 +187,6 @@ We decided not to use Majori Cities Covid data and Kaggle weather data. Instead 
 4.	Both cities humidity level throughouu the year stays above 40% .
 
 
-- Pairplot to see relationship on the various columns in 2 cities i.e between Moving Average New Cases per 100k with Moving Avg 15 days Tempreture and Humidity
-
-![PP](Images/pairplot.png)
-
 ## Models and correlation 
 
 **Link to jupyter notebooks**
@@ -215,6 +211,11 @@ For correlations, we used spearman correlation as it works better with non linea
 
 ![New_Variables](Images/Correlation_finaldataset.png)
 
+
+- Pairplot to see relationship on the various columns in 2 cities i.e between Moving Average New Cases per 100k with Moving Avg 15 days Tempreture and Humidity
+
+![PP](Images/pairplot.png)
+
 ### Regression Model
 
 #### Using all data for training
@@ -222,7 +223,7 @@ For correlations, we used spearman correlation as it works better with non linea
 
 During this phase of model run, we used all 14.5 months data for training on 3 different data sets (one for each city and one combined cities data)
 
-** Using both temeprature and humidity for weather:**
+**Using both temeprature and humidity for weather:**
 
 -	**New York regression model using full 14.5 months data for training:**
 ![NYC_Regression](Images/NYC_MNew_Regression.png)
@@ -234,16 +235,16 @@ During this phase of model run, we used all 14.5 months data for training on 3 d
 ![SP_NYC_Regression](Images/SP_NYC_MNew_Regression.png)
 
 
-** Using temeprature ONLY for weather:**
+**Using temeprature ONLY for weather:**
 
 -	**New York regression model using full 14.5 months data for training:**
-![NYC_Regression](Images/NYC_MNew_tempOnly_Regression.png)
+![NYC_temponly_Regression](Images/NYC_MNew_tempOnly_Regression.png)
 
 -	**Sao Pulo regression model using full 14.5 months data for training:**
-![SP_Regression](Images/SP_MNew_tempOnly_Regression.png)
+![SP_temponly_Regression](Images/SP_MNew_tempOnly_Regression.png)
 
 -	**Combined New York and Sao Pulo regression model using full 14.5 months data for training:**
-![SP_NYC_Regression](Images/SP_NYC_MNew_tempOnly_Regression.png)
+![SP_NYC_temponly_Regression](Images/SP_NYC_MNew_tempOnly_Regression.png)
 
 #### Conclusion using all 14.5 months data
 
@@ -257,13 +258,13 @@ During this phase of model run, we used all 14.5 months data for training on 3 d
 During this phase of model, we train model using 13.5 months of data (from Feb 29,200 to Apr 15, 2021) on 3 different data sets. we used both temperature and humditiy from weather data.
 
 -	**New York regression model using full 13.5 months data for training:**
-![NYC_Regression](Images/NYC_MNew_train_test_Regression.png)
+![NYC_traintest_Regression](Images/NYC_MNew_train_test_Regression.png)
 
 -	**Sao Pulo regression model using full 13.5 months data for training:**
-![SP_Regression](Images/SP_MNew_train_test_Regression.png)
+![SP_traintest_Regression](Images/SP_MNew_train_test_Regression.png)
 
 -	**Combined New York and Sao Pulo regression model using full 13.5 months data for training:**
-![SP_NYC_Regression](Images/SP_NYC_MNew_train_test_Regression.png)
+![SP_NYC_traintest_Regression](Images/SP_NYC_MNew_train_test_Regression.png)
 
 -	** p-values from OLS method using combined data and 13.5 months of data used for training:**
 ![SP_NYC_OLS_MODEL_P_Value](Images/p_value_using_combined_test_train_OLS_model.png)
