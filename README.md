@@ -120,21 +120,24 @@ We are following the considerations below to complete the analysis:
 
 **Below are the screenshots from data issues found in the Major Cities Covid data:**
 
-- Below is New York Citydaily total cases using Major Cities Covid data source 
-![NYC_TotalCases](Images/newyork_totalconfirmdataset.png)
+- New York City daily total cases using Major Cities Covid data source 
+
+ ![NYC_TotalCases](Images/newyork_totalconfirmdataset.png)
 
 - Sao Paulo city's daily total cases using Major cities Covid data source
-![SP_TotalCases](Images/SP_totalconfirmdataset.png)
+
+ ![SP_TotalCases](Images/SP_totalconfirmdataset.png)
 
 - New York city's daily new cases (calcualted) outlier using Major cities Covid data source
-![SP_newcases_outliers](Images/NY_Ave_7day_count.png)
 
+ ![NY_newcases_outliers](Images/NY_Ave_7day_count.PNG)
 - Sao Paulo city's daily new cases (calcualted) outlier using Major cities Covid data source
-![SP_newcases_outliers](Images/SP_Ave_7day_count.png)
+
+ ![SP_newcases_outliers](Images/SP_Ave_7day_count.png)
 
 **CONLCUSION:**
 
-We decided not to use Majori Cities Covid data and Kaggle weather data. Instead we found covid data from New York CityHealth and Seade Foundation for Sao Paulo.
+We decided not to use Major Cities Covid data and Kaggle weather data due to data issues or missing data. After furthe research, we found covid data from New York CityHealth and Seade Foundation for Sao Paulo.
 
 ### Data Selection and preliminary analysis
 
@@ -170,12 +173,12 @@ We decided not to use Majori Cities Covid data and Kaggle weather data. Instead 
 
 ![15_Ave_humidity](Images/15day_avg_humidity.png)
 
-**Compare New York City 7 days moving averages of new cases per 100K population vs New York daily average temperature:**
+**Compare New York City 7 days moving averages of new cases per 100K population vs New York City's daily average temperature:**
 
 - New York Citydaily new cases per 100K vs daily average temperature
 ![NYC_daily_covid_vs_temp](Images/NY_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
 
-**Compare Sao Paulo City 7 days moving averages of new cases per 100K population vs New York daily average temperature:**
+**Compare Sao Paulo City 7 days moving averages of new cases per 100K population vs Sao Paulo City's daily average temperature:**
 -	SPC daily new cases per 100K vs daily average temperature
 ![SPC_daily_covid_vs_temp](Images/SP_7Day_Avg_NewCases_per_100k_and_Avg_15Day_Temp.png)
 
@@ -271,11 +274,12 @@ During this phase of model, we train model using 13.5 months of data (from Feb 2
 
 #### Conclusion from model using 13.5 monnths data for training
 
-1.	The negative R-squared values from individual cities models are going to results in wrong model.
-2.	In addition we conclude that while model trained on 13.5 months data for combined cities has 37% accuracy, but we should use this as final model as it follows best practices.
-3.	Based on p values from different models and final model, we failed null hypthoesise. 
+1.	The negative R-squared values from individual cities models indicated that either test data is limited or model is weak.
+2.	In addition we concluded that while model trained on 13.5 months data for combined cities has 37% accuracy, but we should use this as final model as it follows best practices.It is not overfitting.
+3.	Based on p values from different models and final model, we concluded null hypthoesise(H0) has failed. 
 4.	Low accruacy means that our final model is not good enough to predict impact of change in temperature or humdity on new covid cases.
-### Future analysis recomendation
+
+### Recomendation to improve model
 
 We concluded that there are certain other factors that are impacting the covid spread which were out of scope of this project. In order to further improve our model, we've following recomendations:
 
